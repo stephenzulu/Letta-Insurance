@@ -7,11 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
     <style>
         .director-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.8rem;text-align:center;transition:all .3s;box-shadow:0 2px 12px var(--shadow)}
         .director-card:hover{transform:translateY(-4px);border-color:rgba(200,150,62,.3)}
         .director-initials{width:60px;height:60px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:1.2rem;color:#fff;margin:0 auto 1rem}
+        .ceo-photo{width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 1.5rem;display:block}
+        .director-photo{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 1rem;display:block}
         .director-card h5{font-size:.95rem;margin-bottom:.2rem;color:var(--text)}
         .director-card p{font-size:.78rem;color:var(--text-muted)}
         .org-chart{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:2rem;box-shadow:0 2px 12px var(--shadow);overflow-x:auto}
@@ -22,27 +24,25 @@
     </style>
 </head>
 <body>
-    <div class="page-hero"><div class="container"><h1>Our Leadership</h1><p>Meet the experienced team behind Letta Insurance Brokers.</p><div class="breadcrumb"><a href="index.html">Home</a> <span class="mx-2">/</span> <span style="color:#fff">Leadership</span></div></div></div>
+    <div class="page-hero"><div class="container"><h1>Our Leadership</h1><p>Meet the experienced team behind Letta Insurance Brokers.</p><div class="breadcrumb"><a href="../index.html">Home</a> <span class="mx-2">/</span> <span style="color:#fff">Leadership</span></div></div></div>
 
     <section><div class="container"><div class="row">
         <div class="col-lg-5"><p class="section-label reveal">CEO</p><div class="gold-line reveal reveal-delay-1"></div><h2 class="section-title reveal reveal-delay-1">Led by <span style="color:var(--gold)">Experience</span></h2><p class="section-desc reveal reveal-delay-2">Our leadership brings decades of insurance industry experience.</p></div>
-        <div class="col-lg-7 mt-4 mt-lg-0"><div class="ceo-card reveal reveal-delay-2"><div class="ceo-initials">BC</div><h3 style="font-size:1.4rem;margin-bottom:.3rem">Ms Bridget Bwalya Chipwaya</h3><p style="color:var(--gold);font-size:.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.2rem">Chief Executive Officer & Principal Officer</p><p style="color:var(--text-light);font-size:.88rem;line-height:1.7">With over 33 years at ZSIC General Insurance Limited as Branch Operations Manager for Ndola Branch, Ms Chipwaya brings unparalleled expertise. She holds a Diploma in Insurance Studies, BSc Marketing, and MSc Marketing from The Copperbelt University.</p><div class="d-flex gap-2 mt-3 flex-wrap"><span class="ceo-tag">33+ Years Experience</span><span class="ceo-tag">MSc Marketing</span><span class="ceo-tag">Insurance Diploma</span></div></div></div>
+        <div class="col-lg-7 mt-4 mt-lg-0"><div class="ceo-card reveal reveal-delay-2"><img src="../img/team/bridget.png" alt="Ms Bridget Bwalya Chipwaya" class="ceo-photo"><h3 style="font-size:1.4rem;margin-bottom:.3rem">Ms Bridget Bwalya Chipwaya</h3><p style="color:var(--gold);font-size:.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.2rem">Chief Executive Officer & Principal Officer</p><p style="color:var(--text-light);font-size:.88rem;line-height:1.7">With over 33 years at ZSIC General Insurance Limited as Branch Operations Manager for Ndola Branch, Ms Chipwaya brings unparalleled expertise. She holds a Diploma in Insurance Studies, BSc Marketing, and MSc Marketing from The Copperbelt University.</p><div class="d-flex gap-2 mt-3 flex-wrap"><span class="ceo-tag">33+ Years Of Experience</span><span class="ceo-tag">MSc Marketing</span><span class="ceo-tag">Insurance Diploma</span></div></div></div>
     </div></div></section>
 
     <section style="background:var(--bg-alt)"><div class="container">
         <div class="text-center mb-5"><p class="section-label reveal">Board of Directors</p><div class="gold-line mx-auto reveal reveal-delay-1"></div><h2 class="section-title reveal reveal-delay-1">Directors & <span style="color:var(--gold)">Shareholders</span></h2></div>
         <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-1"><div class="director-initials">JC</div><h5>Mr Jailous Chandika</h5><p>Director & Shareholder</p></div></div>
-            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-2"><div class="director-initials">CM</div><h5>Ms Colletta Mzumira</h5><p>Director & Shareholder</p></div></div>
-            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-3"><div class="director-initials">CM</div><h5>Mr Chelelwa Mwansa</h5><p>Director & Shareholder</p></div></div>
-            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-4"><div class="director-initials">BC</div><h5>Ms Bwalya Chandika</h5><p>Director & Shareholder</p></div></div>
+            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-1"><img src="../img/team/jailous.png" alt="Mr Jailous Chandika" class="director-photo"><h5>Mr Jailous Chandika</h5><p>Marketing Director</p></div></div>
+            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-2"><img src="../img/team/colletta.png" alt="Ms Colletta Mzumira" class="director-photo"><h5>Ms Colletta Mzumira</h5><p>Chief Operations Officer</p></div></div>
+            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-3"><img src="../img/team/chelelwa.png" alt="Mr Chelelwa Mwansa" class="director-photo"><h5>Mr Chelelwa Mwansa</h5><p>Risk & Compliance Manager</p></div></div>
+            <div class="col-6 col-md-3"><div class="director-card reveal reveal-delay-4"><img src="../img/team/bwalya.png" alt="Ms Bwalya Chandika" class="director-photo"><h5>Ms Bwalya Chandika</h5><p>Assistant Broker</p></div></div>
         </div>
     </div></section>
 
- 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/components.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -97,7 +97,7 @@ section{padding:5rem 0;position:relative}
 /* Cards */
 .about-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:2rem;height:100%;transition:all .3s;box-shadow:0 2px 12px var(--shadow)}
 .about-card:hover{transform:translateY(-5px);border-color:rgba(200,150,62,.3);box-shadow:0 12px 35px var(--shadow)}
-.about-icon{width:46px;height:46px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;margin-bottom:1.2rem}
+.about-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--primary),var(--gold));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;margin-bottom:1.2rem}
 .about-card h4{font-size:1.05rem;margin-bottom:.5rem;color:var(--text)}
 .about-card p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
 
@@ -107,8 +107,8 @@ section{padding:5rem 0;position:relative}
 .service-card:hover::before{transform:scaleX(1)}
 .service-card:hover{transform:translateY(-6px);box-shadow:0 16px 45px var(--shadow)}
 .service-num{font-family:'Cinzel',serif;font-size:3rem;color:rgba(8,49,92,.05);position:absolute;top:8px;right:18px}
-.service-icon{font-size:1.5rem;color:var(--primary);margin-bottom:1rem}
-.service-card h4{font-size:1.05rem;margin-bottom:.5rem;color:var(--text)}
+.service-icon{font-size:1.5rem;color:var(--gold);margin-bottom:1rem}
+.service-card h4{font-family:'Cinzel',serif;font-size:1.05rem;margin-bottom:.5rem;color:var(--primary);font-weight:600}
 .service-card p{font-size:.84rem;color:var(--text-muted);line-height:1.6}
 
 /* CEO */
@@ -131,13 +131,13 @@ section{padding:5rem 0;position:relative}
 /* Values */
 .value-item{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid var(--border)}
 .value-item:last-child{border-bottom:none}
-.value-check{width:26px;height:26px;min-width:26px;background:rgba(8,49,92,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:.65rem;margin-top:2px}
+.value-check{width:26px;height:26px;min-width:26px;background:rgba(42,157,143,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.65rem;margin-top:2px}
 .value-item h5{font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;font-weight:600;margin-bottom:.15rem;color:var(--text)}
 .value-item p{font-size:.82rem;color:var(--text-muted);line-height:1.5;margin:0}
 
 /* Contact */
 .contact-info-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.8rem;height:100%;box-shadow:0 2px 10px var(--shadow)}
-.contact-icon{width:40px;height:40px;background:rgba(8,49,92,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:.95rem;margin-bottom:.9rem}
+.contact-icon{width:40px;height:40px;background:rgba(200,150,62,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.95rem;margin-bottom:.9rem}
 .contact-info-card h5{font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:600;margin-bottom:.3rem;color:var(--text)}
 .contact-info-card p{font-size:.82rem;color:var(--text-muted);line-height:1.6}
 .contact-info-card a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .3s}

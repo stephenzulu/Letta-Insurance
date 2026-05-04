@@ -4,25 +4,37 @@
    Include this in every page: <script src="js/components.js"></script>
    ═══════════════════════════════════════════ */
 
-// Detect current page for active nav link
-function getCurrentPage() {
-    const path = window.location.pathname;
-    const file = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-    return file;
+// Detect base path from the script's own URL (works on GitHub Pages, local server, and file://)
+const basePath = (function() {
+    const scripts = document.querySelectorAll('script[src*="components.js"]');
+    const src = scripts.length ? scripts[scripts.length - 1].getAttribute('src') : '';
+    // Script is loaded as "js/components.js" (root) or "../js/components.js" (subdir)
+    return src.replace('js/components.js', '');
+})();
+const isFile = window.location.protocol === 'file:';
+function pageLink(dir) {
+    return basePath + dir + (isFile ? 'index.html' : '');
 }
 
+// Detect current page for active nav link
 function isActive(page) {
-    return getCurrentPage() === page ? 'active' : '';
+    const path = window.location.pathname;
+    if (page === 'index.html') {
+        // Home is active if we're NOT in a known subdirectory
+        return !(/\/(about|services|team|contact)(\/|$)/.test(path)) ? 'active' : '';
+    }
+    const section = page.replace('.html', '').replace('/', '');
+    return path.includes('/' + section) ? 'active' : '';
 }
 
 // ═══════ FAVICON ═══════
 function injectFavicon() {
     const head = document.head;
     const favicons = [
-        { rel: 'icon', type: 'image/x-icon', href: 'img/favicon.ico' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'img/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'img/favicon-16x16.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: 'img/apple-touch-icon.png' }
+        { rel: 'icon', type: 'image/x-icon', href: basePath + 'img/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: basePath + 'img/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: basePath + 'img/favicon-16x16.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: basePath + 'img/apple-touch-icon.png' }
     ];
     favicons.forEach(f => {
         const link = document.createElement('link');
@@ -48,11 +60,11 @@ function injectNavbar() {
     nav.className = 'navbar navbar-expand-lg navbar-custom fixed-top';
     nav.innerHTML = `
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="img/logo.png" alt="LIBL" class="nav-logo">
+        <a class="navbar-brand d-flex align-items-center" href="${basePath}">
+            <img src="${basePath}img/logo.png" alt="LIBL" class="nav-logo">
             <div class="d-flex flex-column">
                 <span class="nav-brand-text">Letta Insurance</span>
-                <span class="nav-brand-sub">Brokers Limited</span>
+                <span class="nav-brand-text">Brokers Limited</span>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -60,12 +72,12 @@ function injectNavbar() {
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navMenu">
             <ul class="navbar-nav align-items-lg-center gap-lg-1">
-                <li class="nav-item"><a class="nav-link ${isActive('index.html')}" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link ${isActive('about.html')}" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link ${isActive('services.html')}" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link ${isActive('team.html')}" href="team.html">Leadership</a></li>
-                <li class="nav-item"><a class="nav-link ${isActive('contact.html')}" href="contact.html">Contact</a></li>
-                <li class="nav-item ms-lg-2"><a class="btn btn-nav-cta" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link ${isActive('index.html')}" href="${basePath}${isFile ? 'index.html' : ''}">Home</a></li>
+                <li class="nav-item"><a class="nav-link ${isActive('about')}" href="${pageLink('about/')}">About</a></li>
+                <li class="nav-item"><a class="nav-link ${isActive('services')}" href="${pageLink('services/')}">Services</a></li>
+                <li class="nav-item"><a class="nav-link ${isActive('team')}" href="${pageLink('team/')}">Leadership</a></li>
+                <li class="nav-item"><a class="nav-link ${isActive('contact')}" href="${pageLink('contact/')}">Contact</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-nav-cta" href="${pageLink('contact/')}">Contact Us</a></li>
                 <li class="nav-item ms-lg-2">
                     <button class="theme-toggle" id="themeToggle" title="Toggle theme">
                         <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
@@ -101,7 +113,7 @@ function injectFooter() {
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-4">
-                <div class="footer-brand mb-2">Letta Insurance Brokers</div>
+                <div class="footer-brand mb-2">Letta Insurance Brokers Limited</div>
                 <p style="font-size:.8rem;line-height:1.7;max-width:280px">Your trusted partner in insurance broking. We strive to be the preferred and reliable supplier of choice.</p>
                 <p style="font-size:.75rem;margin-top:1rem">
                     <strong style="color:rgba(255,255,255,.8)">PACRA:</strong> 120251029885<br>
@@ -111,20 +123,20 @@ function injectFooter() {
             <div class="col-6 col-lg-2">
                 <h6 style="font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.8);margin-bottom:1rem">Pages</h6>
                 <div class="footer-links d-flex flex-column gap-2">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="services.html">Services</a>
-                    <a href="team.html">Leadership</a>
-                    <a href="contact.html">Contact</a>
+                   <a href="${basePath}${isFile ? 'index.html' : ''}">Home</a>
+                   <a href="${pageLink('about/')}">About</a>
+                   <a href="${pageLink('services/')}">Services</a>
+                   <a href="${pageLink('team/')}">Leadership</a>
+                   <a href="${pageLink('contact/')}">Contact</a>
                 </div>
             </div>
             <div class="col-6 col-lg-3">
                 <h6 style="font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.8);margin-bottom:1rem">Services</h6>
                 <div class="footer-links d-flex flex-column gap-2">
-                    <a href="services.html">General Insurance</a>
-                    <a href="services.html">Health Insurance</a>
-                    <a href="services.html">Group Life Assurance</a>
-                    <a href="services.html">Risk Advisory</a>
+                    <a href="${pageLink('services/')}">General Insurance</a>
+                    <a href="${pageLink('services/')}">Health & Funeral Insurance</a>
+                    <a href="${pageLink('services/')}">Group Life Assurance</a>
+                    <a href="${pageLink('services/')}">Risk Advisory</a>
                 </div>
             </div>
             <div class="col-lg-3">
