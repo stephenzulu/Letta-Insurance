@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letta Insurance Brokers Limited | Cover with Confidence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+            background-color:var(--primary-dark);
+            /* Place your hero image as img/hero-bg.jpg */
+            background-image:url('img/hero-bg.jpeg');
+            background-size:cover;background-position:center;background-attachment:fixed}
+        /* Dark navy overlay that blends with the image */
+        .hero::before{content:'';position:absolute;inset:0;
+            background:linear-gradient(135deg,
+                rgba(5,30,58,.92) 0%,
+                rgba(8,49,92,.88) 30%,
+                rgba(13,74,138,.82) 60%,
+                rgba(8,49,92,.90) 100%);
+            z-index:1}
+        /* Subtle pattern overlay for texture */
+        .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:140px;background:linear-gradient(to top,var(--bg),transparent);z-index:3}
+        .hero .hero-pattern{position:absolute;inset:0;z-index:2;opacity:.4;
+            background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+        /* Animated diagonal light streak */
+        .hero .hero-streak{position:absolute;top:-50%;left:-50%;width:200%;height:200%;z-index:2;
+            background:linear-gradient(45deg,transparent 40%,rgba(200,150,62,.04) 45%,rgba(200,150,62,.06) 50%,transparent 55%);
+            animation:streak 8s ease-in-out infinite}
+        @keyframes streak{0%,100%{transform:translateX(-30%) translateY(-10%)}50%{transform:translateX(10%) translateY(5%)}}
+        /* Floating shapes */
+        .hero-shape{position:absolute;border-radius:50%;z-index:2}
+        .hero-shape-1{width:500px;height:500px;background:radial-gradient(circle,rgba(200,150,62,.1),transparent 70%);top:-150px;right:-150px;animation:fs 9s ease-in-out infinite}
+        .hero-shape-2{width:350px;height:350px;background:radial-gradient(circle,rgba(255,255,255,.05),transparent 70%);bottom:-100px;left:5%;animation:fs 11s ease-in-out infinite reverse}
+        .hero-shape-3{width:200px;height:200px;background:radial-gradient(circle,rgba(42,157,143,.06),transparent 70%);top:30%;left:40%;animation:fs 7s ease-in-out infinite 2s}
+        @keyframes fs{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-35px)}}
+        /* Gold accent line at bottom */
+        .hero .hero-accent-line{position:absolute;bottom:0;left:0;right:0;height:3px;z-index:4;
+            background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50px;padding:6px 18px;font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.5rem;backdrop-filter:blur(4px)}
+        .hero-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pd 2s infinite}
+        @keyframes pd{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+        .hero h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;margin-bottom:1.2rem;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.3)}
+        .hero h1 .accent{color:var(--gold)}
+        .hero-desc{font-size:1rem;line-height:1.75;color:rgba(255,255,255,.78);max-width:520px;margin-bottom:2rem}
+        .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+        .btn-white-outline{background:rgba(255,255,255,.06);color:#fff;font-weight:600;font-size:.84rem;letter-spacing:.8px;text-transform:uppercase;padding:13px 34px;border-radius:4px;border:1.5px solid rgba(255,255,255,.2);transition:all .3s;text-decoration:none;display:inline-block;backdrop-filter:blur(4px)}
+        .btn-white-outline:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,150,62,.08)}
+        .hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+        .hero-stat h3{font-size:2rem;color:var(--gold);margin-bottom:.2rem}
+        .hero-stat p{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1.2px}
+    </style>
+</head>
+<body>
+    <!-- ═══ PAGE CONTENT ONLY ═══ -->
+    <!-- Navbar, footer, preloader, social float are injected by components.js -->
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-streak"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+        <div class="hero-accent-line"></div>
+        <div class="container position-relative" style="z-index:5">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                   <br>
+                    <h1 class="reveal reveal-delay-1">Insurance That<br><span class="accent">Protects</span> What<br>Matters Most</h1>
+                    <p class="hero-desc reveal reveal-delay-2">Your trusted partner in risk management, offering tailored insurance solutions with expert advice and unwavering commitment to your peace of mind.</p>
+                     <div class="hero-badge reveal"><span class="dot"></span> Licensed Insurance Brokers &bull; Ndola, Zambia</div>
+                    <div class="hero-btns reveal reveal-delay-3"><a href="services.html" class="btn-gold">Explore Services</a><a href="about.html" class="btn-white-outline">Learn More</a></div>
+                    <div class="hero-stats reveal reveal-delay-4">
+                        <div class="hero-stat"><h3>33+</h3><p>Years Experience</p></div>
+                        <div class="hero-stat"><h3>100%</h3><p>Client Retention Goal</p></div>
+                        <div class="hero-stat"><h3>5%</h3><p>Market Share Target</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                    <svg viewBox="0 0 400 400" style="width:320px;opacity:.9" class="reveal reveal-delay-3">
+                        <defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8963E"/><stop offset="100%" stop-color="#ffffff"/></linearGradient></defs>
+                        <circle cx="200" cy="200" r="180" fill="none" stroke="url(#sg)" stroke-width=".8" opacity=".2"/>
+                        <circle cx="200" cy="200" r="140" fill="none" stroke="url(#sg)" stroke-width=".5" opacity=".12"/>
+                        <path d="M200 60 L290 120 L290 220 Q290 310 200 350 Q110 310 110 220 L110 120 Z" fill="none" stroke="url(#sg)" stroke-width="1.5" opacity=".5"/>
+                        <path d="M200 90 L270 137 L270 215 Q270 290 200 325 Q130 290 130 215 L130 137 Z" fill="url(#sg)" opacity=".05"/>
+                        <text x="200" y="192" text-anchor="middle" font-family="Cinzel,serif" font-size="26" fill="#C8963E" opacity=".85" font-weight="600">LIBL</text>
+                        <text x="200" y="222" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="rgba(255,255,255,.5)" letter-spacing="3.5">COVER WITH CONFIDENCE</text>
+                        <path d="M172 252 L193 273 L232 228" fill="none" stroke="#C8963E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick About -->
+    <section style="background:var(--bg-alt)">
+        <div class="container"><div class="row align-items-center">
+            <div class="col-lg-6">
+                <p class="section-label reveal">Who We Are</p><div class="gold-line reveal reveal-delay-1"></div>
+                <h2 class="section-title reveal reveal-delay-1">Built on Trust, Driven by <span style="color:var(--gold)">Excellence</span></h2>
+                <p class="section-desc reveal reveal-delay-2">Incorporated on 2nd August 2025, Letta Insurance Brokers Limited is a proudly Zambian company providing quality broking insurance services with emphasis on sound business ethics.</p>
+                <a href="about.html" class="btn-gold mt-3 reveal reveal-delay-3" style="font-size:.78rem;padding:12px 28px">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0"><div class="row g-3">
+                <div class="col-6"><div class="about-card reveal reveal-delay-1"><div class="about-icon"><i class="fas fa-shield-halved"></i></div><h4>Risk Assessment</h4><p>Identify and mitigate risks efficiently.</p></div></div>
+                <div class="col-6"><div class="about-card reveal reveal-delay-2"><div class="about-icon"><i class="fas fa-handshake"></i></div><h4>Client-Centric</h4><p>Tailor-made resolutions for your needs.</p></div></div>
+                <div class="col-6"><div class="about-card reveal reveal-delay-3"><div class="about-icon"><i class="fas fa-scale-balanced"></i></div><h4>Negotiation</h4><p>Better terms and pricing with insurers.</p></div></div>
+                <div class="col-6"><div class="about-card reveal reveal-delay-4"><div class="about-icon"><i class="fas fa-file-invoice"></i></div><h4>Claims Advocacy</h4><p>Fair and swift claim resolution.</p></div></div>
+            </div></div>
+        </div></div>
+    </section>
+
+    <!-- Quick Services -->
+    <section>
+        <div class="container">
+            <div class="text-center mb-5"><p class="section-label reveal">Our Services</p><div class="gold-line mx-auto reveal reveal-delay-1"></div><h2 class="section-title reveal reveal-delay-1">Insurance <span style="color:var(--primary)">Solutions</span></h2></div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4"><div class="service-card reveal reveal-delay-1"><span class="service-num">01</span><div class="service-icon"><i class="fas fa-building-columns"></i></div><h4>General Insurance</h4><p>Property cover for vehicles, buildings, equipment.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card reveal reveal-delay-2"><span class="service-num">02</span><div class="service-icon"><i class="fas fa-heart-pulse"></i></div><h4>Health Insurance</h4><p>Tailored for individuals, families, and organizations.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card reveal reveal-delay-3"><span class="service-num">03</span><div class="service-icon"><i class="fas fa-users-gear"></i></div><h4>Group Life Assurance</h4><p>Employee protection with group life policies.</p></div></div>
+            </div>
+            <div class="text-center mt-4 reveal reveal-delay-4"><a href="services.html" class="btn-gold" style="font-size:.78rem;padding:12px 28px">View All Services <i class="fas fa-arrow-right ms-2"></i></a></div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:var(--primary);padding:3.5rem 0"><div class="container text-center">
+        <h2 style="color:#fff;font-size:clamp(1.4rem,3vw,2rem);margin-bottom:1rem" class="reveal">"Cover with Confidence"</h2>
+        <p style="color:rgba(255,255,255,.65);font-size:.92rem;max-width:500px;margin:0 auto 1.5rem" class="reveal reveal-delay-1">Ready to protect what matters most? Let our experts find the perfect insurance solution for you.</p>
+        <a href="contact.html" class="btn-gold reveal reveal-delay-2">Contact Us Today</a>
+    </div></section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function animateCounters(){document.querySelectorAll('.hero-stat h3').forEach(el=>{const txt=el.textContent,num=parseInt(txt),sfx=txt.replace(/[0-9]/g,'');let cur=0;const step=Math.ceil(num/35),t=setInterval(()=>{cur+=step;if(cur>=num){cur=num;clearInterval(t)}el.textContent=cur+sfx},30)})}
+        const hObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounters();hObs.disconnect()}})},{threshold:.3});
+        const hs=document.querySelector('.hero-stats');if(hs)hObs.observe(hs);
+    </script>
+</body>
+</html>
