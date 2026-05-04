@@ -132,7 +132,7 @@ function injectFooter() {
                 <p style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);font-style:italic">"Cover with Confidence"</p>
                 <div class="footer-social d-flex gap-2 mt-3">
                     <a href="https://web.facebook.com/profile.php?id=61579554008790" target="_blank" class="fs-fb"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/lettainsurancebrokerslimited/" target="_blank" class="sf-ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/lettainsurancebrokerslimited/" target="_blank" class="fs-ig"><i class="fab fa-instagram"></i></a>
                     <a href="https://x.com/LettaBrokers" target="_blank" class="fs-x"><i class="fab fa-x-twitter"></i></a>
                     <a href="https://www.linkedin.com/company/letta-insurance-brokers-limited" target="_blank" class="fs-li"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://wa.me/260961047599" target="_blank" class="fs-wa"><i class="fab fa-whatsapp"></i></a>
