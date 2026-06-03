@@ -105,7 +105,7 @@ function initContactForm(){
             phone: form.querySelector('[name="phone"]').value || 'Not provided',
             service: form.querySelector('[name="service"]').value || 'Not specified',
             message: form.querySelector('[name="message"]').value,
-            to_email: 'lettabrokers@zambia.co.zm'
+            to_email: 'jchandika@lettainsurancebrokerslimited.com'
         };
 
         // Check if EmailJS is configured
@@ -119,7 +119,7 @@ function initContactForm(){
                 'Service: '+data.service+'\n\n'+
                 'Message:\n'+data.message
             );
-            window.open('mailto:lettabrokers@zambia.co.zm?subject='+subject+'&body='+body);
+            window.open('mailto:jchandika@lettainsurancebrokerslimited.com?subject='+subject+'&body='+body);
             showToast('Opening your email client...','success');
             btn.innerHTML=origText;
             btn.disabled=false;
